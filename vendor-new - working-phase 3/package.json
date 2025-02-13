@@ -1,0 +1,33 @@
+{
+  "name": "vendor-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js",
+    "electron": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.744.0",
+    "aws-sdk": "^2.1692.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "electron": "^34.0.2",
+    "electron-store": "^10.0.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.9",
+    "pdf-to-printer": "^5.6.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "validator": "^13.12.0"
+  }
+}

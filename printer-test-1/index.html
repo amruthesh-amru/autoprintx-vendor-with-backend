@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PDF Printing Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label {
+        font-weight: bold;
+      }
+      select,
+      button {
+        margin-top: 10px;
+        padding: 5px;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PDF Printing Demo</h1>
+    <div>
+      <label for="printerSelect">Select Printer:</label>
+      <select id="printerSelect">
+        <option value="">Loading printers...</option>
+      </select>
+    </div>
+    <div>
+      <label for="pageRange">Page Range (e.g., 1-5,7):</label>
+      <input type="text" id="pageRange" placeholder="Enter page range" />
+    </div>
+
+    <div>
+      <button id="printBtn">Print PDF</button>
+    </div>
+
+    <script>
+      // Require the pdf-to-printer package and Node's path module
+      const { getPrinters, print } = require("pdf-to-printer");
+      const path = require("path");
+
+      // Populate the dropdown with available printers
+      function populatePrinters() {
+        const select = document.getElementById("printerSelect");
+        // Clear existing options
+        select.innerHTML = "";
+        getPrinters()
+          .then((printers) => {
+            if (printers.length === 0) {
+              let option = document.createElement("option");
+              option.value = "";
+              option.text = "No printers found";
+              select.appendChild(option);
+            } else {
+              printers.forEach((printer) => {
+                let option = document.createElement("option");
+                // Assuming printer objects have a 'name' property
+                option.value = printer.name;
+                option.text = printer.name;
+                select.appendChild(option);
+              });
+            }
+          })
+          .catch((err) => {
+            console.error("Error fetching printers:", err);
+            select.innerHTML =
+              "<option value=''>Error loading printers</option>";
+          });
+      }
+
+      populatePrinters();
+
+      // Add click handler for the Print button
+      document.getElementById("printBtn").addEventListener("click", () => {
+        const select = document.getElementById("printerSelect");
+        const printerName = select.value;
+        const pageRangeInput = document.getElementById("pageRange").value;
+
+        if (!printerName) {
+          alert("Please select a printer before printing.");
+          return;
+        }
+        // Define the PDF file to print (ensure 'sample.pdf' exists in your project folder)
+        const pdfPath = path.join(__dirname, "sample.pdf");
+
+        // Custom print options:
+        const options = {
+          printer: printerName, // The selected printer
+          paperSize: "A4", // Set paper size to A4
+          side: "duplex", // Enable two-sided printing (use "duplex", "duplexshort", or "duplexlong")
+          copies: 1,
+          monochrome: false,
+          pages: pageRangeInput ? pageRangeInput.split(",") : null,
+        };
+
+        print(pdfPath, options)
+          .then(() => {
+            alert("Print job submitted successfully!");
+          })
+          .catch((err) => {
+            console.error("Error printing PDF:", err);
+            alert(
+              "An error occurred while printing. Check the console for details."
+            );
+          });
+      });
+    </script>
+  </body>
+</html>
