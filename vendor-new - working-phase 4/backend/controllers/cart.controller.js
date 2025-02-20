@@ -31,10 +31,11 @@ export const addToCart = async (req, res) => {
 
 export const removeFromCart = async (req, res) => {
     try {
-        // Get the index from the request body.
-        const { index } = req.body;
-        if (index === undefined) {
-            return res.status(400).json({ success: false, message: "Missing index" });
+        // Get the index from the request body and convert to a number.
+        let { index } = req.body;
+        index = parseInt(index, 10);
+        if (isNaN(index)) {
+            return res.status(400).json({ success: false, message: "Invalid index provided" });
         }
 
         // Find the user using the userId set by auth middleware.
@@ -43,7 +44,7 @@ export const removeFromCart = async (req, res) => {
             return res.status(404).json({ success: false, message: "User not found" });
         }
 
-        // Check that the index is valid.
+        // Check that the index is within the bounds of the cartData array.
         if (index < 0 || index >= userData.cartData.length) {
             return res
                 .status(400)
@@ -64,11 +65,10 @@ export const removeFromCart = async (req, res) => {
         });
     } catch (err) {
         console.error("Error in removeFromCart:", err);
-        res
-            .status(500)
-            .json({ success: false, message: "Error removing item from cart" });
+        res.status(500).json({ success: false, message: "Error removing item from cart" });
     }
 };
+
 export const getCartTotal = async (req, res) => {
     const { cartItems, printOptions } = req.body;
 

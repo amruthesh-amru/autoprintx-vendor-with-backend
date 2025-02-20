@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema({
         }
     },
     cartData: {
-        type: Object,
+        type: [Object],
         default: []
     }
 },

@@ -64,22 +64,60 @@ export const handlePaymentSuccess = async (sessionId) => {
         console.error('Error handling payment success:', error);
     }
 };
+// export const verifySession = async (req, res) => {
+//     const { sessionId } = req.body;
+
+//     try {
+//         // Retrieve session details from Stripe
+//         const session = await stripe.checkout.sessions.retrieve(sessionId);
+//         const paymentIntent = await stripe.paymentIntents.retrieve(session.payment_intent);
+//         console.log("Session:", session);
+//         console.log("PaymentIntent:", paymentIntent);
+
+//         // Use optional chaining to safely access charge details
+//         const charge = paymentIntent.charges?.data?.[0];
+
+//         res.json({
+//             paymentIntentId: paymentIntent.id,
+//             paymentStatus: paymentIntent.status,  // e.g., 'succeeded'
+//             amountPaid: session.amount_total,
+//             currency: session.currency,
+//             customerEmail: session.customer_email,
+//             customerName: session.customer_name || '',
+//             paymentMethodType: charge?.payment_method_details?.type || "N/A",
+//             cardType: charge?.payment_method_details?.card?.brand || "N/A",
+//             cardLast4: charge?.payment_method_details?.card?.last4 || "N/A",
+//             stripeFee: charge?.balance_transaction?.fee || 0,
+//             receiptUrl: session.receipt_url || ""
+//         });
+//     } catch (error) {
+//         console.error("Error verifying session:", error);
+//         res.status(500).json({ error: "Error verifying session" });
+//     }
+// };
+
 export const verifySession = async (req, res) => {
     const { sessionId } = req.body;
 
     try {
-        // Retrieve session details from Stripe
         const session = await stripe.checkout.sessions.retrieve(sessionId);
-        const paymentIntent = await stripe.paymentIntents.retrieve(session.payment_intent);
-        console.log("Session:", session);
-        console.log("PaymentIntent:", paymentIntent);
 
-        // Use optional chaining to safely access charge details
-        const charge = paymentIntent.charges?.data?.[0];
+        // Check if session.payment_intent exists
+        if (!session.payment_intent) {
+            console.error("Payment Intent not found in session");
+            return res.status(400).json({ error: "Payment Intent not found" }); // Or appropriate error
+        }
+
+        const paymentIntentId = session.payment_intent; // Get the Payment Intent ID
+
+        const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId); // Use Payment Intent ID
+
+        // ... (rest of your code, using paymentIntent)
+        const charge = paymentIntent.charges?.data?.[0]; // Access charge details safely
 
         res.json({
             paymentIntentId: paymentIntent.id,
-            paymentStatus: paymentIntent.status,  // e.g., 'succeeded'
+            paymentStatus: paymentIntent.status,
             amountPaid: session.amount_total,
             currency: session.currency,
             customerEmail: session.customer_email,
@@ -90,6 +128,7 @@ export const verifySession = async (req, res) => {
             stripeFee: charge?.balance_transaction?.fee || 0,
             receiptUrl: session.receipt_url || ""
         });
+
     } catch (error) {
         console.error("Error verifying session:", error);
         res.status(500).json({ error: "Error verifying session" });

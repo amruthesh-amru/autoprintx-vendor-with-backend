@@ -2,7 +2,8 @@ import userModel from "../models/user.model.js";
 import validator from "validator";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-
+import dotenv from 'dotenv'
+dotenv.config()
 const createToken = async (userId) => {
     try {
         return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: "7d" });
@@ -32,10 +33,7 @@ const registerUser = async (req, res) => {
             return res.status(400).json({ success: false, message: "User already exists" });
         }
 
-        const phoneExist = await userModel.findOne({ "contactInfo.phone": phone });
-        if (phoneExist) {
-            return res.status(400).json({ success: false, message: "Phone number already exists" });
-        }
+
 
         if (!validator.isMobilePhone(phone)) {
             return res.status(400).json({ success: false, message: "Invalid phone number" });
@@ -86,7 +84,7 @@ const loginUser = async (req, res) => {
         }
 
         const token = await createToken(user._id);
-        return res.status(200).json({ success: true, message: "Logged in successfully!", token, userId: user._id, role: user.role });
+        return res.status(200).json({ success: true, message: "Logged in successfully!", token, userId: user._id, role: user.role, email: user.email });
     } catch (error) {
         console.log("Error during login", error);
         return res.status(500).json({ success: false, message: "Unable to login" });
