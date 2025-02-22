@@ -1,0 +1,242 @@
+[
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "edit Amruthesh's Resume.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/ad781f17-1318-4233-82a5-550b205f2ef4.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "spiral",
+          "color": "color",
+          "copies": 26,
+          "duplex": false,
+          "estimatedCost": 140,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67b9ce093e2163a44c5194d6"
+      }
+    ],
+    "costEstimate": 140,
+    "status": "pending",
+    "_id": "67b9ce093e2163a44c5194d5",
+    "createdAt": "2025-02-22T13:15:53.935Z",
+    "updatedAt": "2025-02-22T13:15:53.935Z",
+    "__v": 0
+  },
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "edit Amruthesh's Resume.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/ad781f17-1318-4233-82a5-550b205f2ef4.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "spiral",
+          "color": "color",
+          "copies": 26,
+          "duplex": false,
+          "estimatedCost": 140,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67b9ce093e2163a44c5194d9"
+      }
+    ],
+    "costEstimate": 140,
+    "status": "pending",
+    "_id": "67b9ce093e2163a44c5194d8",
+    "createdAt": "2025-02-22T13:15:53.978Z",
+    "updatedAt": "2025-02-22T13:15:53.978Z",
+    "__v": 0
+  },
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "cg_report_amruthesh.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/8f6aa123-78f7-416d-85e7-82a57e7986c6.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 5,
+          "duplex": false,
+          "estimatedCost": 525,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67b9cfe53e2163a44c5194de"
+      }
+    ],
+    "costEstimate": 525,
+    "status": "pending",
+    "_id": "67b9cfe53e2163a44c5194dd",
+    "createdAt": "2025-02-22T13:23:49.418Z",
+    "updatedAt": "2025-02-22T13:23:49.418Z",
+    "__v": 0
+  },
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "cg_report_amruthesh.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/8f6aa123-78f7-416d-85e7-82a57e7986c6.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 5,
+          "duplex": false,
+          "estimatedCost": 525,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67b9cfe53e2163a44c5194e1"
+      }
+    ],
+    "costEstimate": 525,
+    "status": "pending",
+    "_id": "67b9cfe53e2163a44c5194e0",
+    "createdAt": "2025-02-22T13:23:49.445Z",
+    "updatedAt": "2025-02-22T13:23:49.445Z",
+    "__v": 0
+  },
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "cg_report_amruthesh.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/f9e09515-ad4e-4d1e-a63e-0a3eb8329faa.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 3,
+          "duplex": false,
+          "estimatedCost": 315,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67b9d25b3e2163a44c5194e6"
+      }
+    ],
+    "costEstimate": 315,
+    "status": "pending",
+    "_id": "67b9d25b3e2163a44c5194e5",
+    "createdAt": "2025-02-22T13:34:19.633Z",
+    "updatedAt": "2025-02-22T13:34:19.633Z",
+    "__v": 0
+  },
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "cg_report_amruthesh.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/f9e09515-ad4e-4d1e-a63e-0a3eb8329faa.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 3,
+          "duplex": false,
+          "estimatedCost": 315,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67b9d25b3e2163a44c5194e9"
+      }
+    ],
+    "costEstimate": 315,
+    "status": "pending",
+    "_id": "67b9d25b3e2163a44c5194e8",
+    "createdAt": "2025-02-22T13:34:19.652Z",
+    "updatedAt": "2025-02-22T13:34:19.652Z",
+    "__v": 0
+  },
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "COMPUTER-SCIENCE-PROJECT-TITLES-2024-25-TAKEOFF-EDU-GROUP-jan-2025.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/1a86b374-e8fd-42cd-bebf-c2c7db68eb61.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 10,
+          "duplex": false,
+          "estimatedCost": 750,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67b9d3813e2163a44c5194ee"
+      }
+    ],
+    "costEstimate": 750,
+    "status": "pending",
+    "_id": "67b9d3813e2163a44c5194ed",
+    "createdAt": "2025-02-22T13:39:13.333Z",
+    "updatedAt": "2025-02-22T13:39:13.333Z",
+    "__v": 0
+  },
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "COMPUTER-SCIENCE-PROJECT-TITLES-2024-25-TAKEOFF-EDU-GROUP-jan-2025.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/1a86b374-e8fd-42cd-bebf-c2c7db68eb61.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 10,
+          "duplex": false,
+          "estimatedCost": 750,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67b9d3813e2163a44c5194f1"
+      }
+    ],
+    "costEstimate": 750,
+    "status": "pending",
+    "_id": "67b9d3813e2163a44c5194f0",
+    "createdAt": "2025-02-22T13:39:13.387Z",
+    "updatedAt": "2025-02-22T13:39:13.387Z",
+    "__v": 0
+  }
+]
