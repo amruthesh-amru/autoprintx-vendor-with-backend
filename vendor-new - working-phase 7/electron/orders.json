@@ -1,0 +1,32 @@
+[
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "finallllll.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/908390c2-31ae-49e8-bb99-f5a52a136fce.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 1,
+          "duplex": false,
+          "estimatedCost": 130,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67bee3b4125ef03fdedfa835"
+      }
+    ],
+    "costEstimate": 130,
+    "status": "pending",
+    "_id": "67bee3b4125ef03fdedfa834",
+    "createdAt": "2025-02-26T09:49:40.695Z",
+    "updatedAt": "2025-02-26T09:49:40.695Z",
+    "__v": 0
+  }
+]

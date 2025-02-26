@@ -1,0 +1,70 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendor Order App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>AutoPrint X</h1>
+      <p class="app-subtitle">Vendor Dashboard</p>
+    </header>
+    <div class="container">
+      <h1>📦 New Orders</h1>
+
+      <div id="orders-container">
+        <ul id="order-list" class="order-list"></ul>
+      </div>
+
+      <div id="order-details" class="order-details"></div>
+
+    
+      </div>
+    </div>
+    <script src="https://unpkg.com/@heroicons/v2.0.18/24/outline/index.js"></script>
+    <script type="module" src="renderer.js" defer></script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendor Order App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>AutoPrint X</h1>
+      <p class="app-subtitle">Vendor Dashboard</p>
+      <!-- Show Past Orders Button that navigates to pastOrders.html -->
+      <button id="show-past-orders">Show Past Orders</button>
+    </header>
+
+    <div class="container">
+      <h1>📦 New Orders</h1>
+      <div id="orders-container">
+        <ul id="order-list" class="order-list"></ul>
+      </div>
+      <div id="order-details" class="order-details"></div>
+    </div>
+
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
+        const showPastOrdersBtn = document.getElementById("show-past-orders");
+        showPastOrdersBtn.addEventListener("click", () => {
+          window.location.href = "pastOrders.html";
+        });
+      });
+    </script>
+    <script type="module" src="renderer.js" defer></script>
+  </body>
+</html>

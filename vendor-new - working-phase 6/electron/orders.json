@@ -1,0 +1,32 @@
+[
+  {
+    "customer": "67b755ee3b21436e4802839f",
+    "items": [
+      {
+        "document": {
+          "fileName": "cg_report_amruthesh.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/5fe0b5e0-d75d-48a5-aaf1-a369675d6f45.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "staple",
+          "color": "color",
+          "copies": 3,
+          "duplex": false,
+          "estimatedCost": 315,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "67bc1368276d7e07a873e433"
+      }
+    ],
+    "costEstimate": 315,
+    "status": "pending",
+    "_id": "67bc1368276d7e07a873e432",
+    "createdAt": "2025-02-24T06:36:24.963Z",
+    "updatedAt": "2025-02-24T06:36:24.963Z",
+    "__v": 0
+  }
+]
