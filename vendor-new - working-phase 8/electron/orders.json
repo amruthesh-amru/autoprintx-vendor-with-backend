@@ -1,32 +1,62 @@
 [
   {
-    "customer": "67b755ee3b21436e4802839f",
+    "customer": "Amruthesh Gowda",
     "items": [
       {
         "document": {
-          "fileName": "finallllll.pdf",
-          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/908390c2-31ae-49e8-bb99-f5a52a136fce.pdf",
+          "fileName": "COMPUTER-SCIENCE-PROJECT-TITLES-2024-25-TAKEOFF-EDU-GROUP-jan-2025.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/456a1e38-5ac2-46c2-9cba-40904e7badc0.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "spiral",
+          "color": "bw",
+          "copies": 19,
+          "duplex": true,
+          "estimatedCost": 176,
+          "orientation": "portrait",
+          "pageRange": "1-9",
+          "paperSize": "A4",
+          "selectAll": false
+        },
+        "_id": "67befc34c6a13b046c054d6b"
+      }
+    ],
+    "costEstimate": 176,
+    "status": "pending",
+    "_id": "67befc34c6a13b046c054d6a",
+    "createdAt": "2025-02-26T11:34:12.605Z",
+    "updatedAt": "2025-02-26T11:34:12.605Z",
+    "__v": 0
+  },
+  {
+    "customer": "Amruthesh Gowda",
+    "items": [
+      {
+        "document": {
+          "fileName": "cg_report_amruthesh.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/244894b7-3373-4312-862b-aa4b78bc71d4.pdf",
           "pages": 1
         },
         "printOptions": {
           "binding": "none",
-          "color": "color",
-          "copies": 1,
-          "duplex": false,
-          "estimatedCost": 130,
+          "color": "bw",
+          "copies": 15,
+          "duplex": true,
+          "estimatedCost": 150,
           "orientation": "portrait",
-          "pageRange": "",
+          "pageRange": "1-10",
           "paperSize": "A4",
-          "selectAll": true
+          "selectAll": false
         },
-        "_id": "67bee3b4125ef03fdedfa835"
+        "_id": "67befd1dc6a13b046c054d71"
       }
     ],
-    "costEstimate": 130,
+    "costEstimate": 150,
     "status": "pending",
-    "_id": "67bee3b4125ef03fdedfa834",
-    "createdAt": "2025-02-26T09:49:40.695Z",
-    "updatedAt": "2025-02-26T09:49:40.695Z",
+    "_id": "67befd1dc6a13b046c054d70",
+    "createdAt": "2025-02-26T11:38:05.942Z",
+    "updatedAt": "2025-02-26T11:38:05.942Z",
     "__v": 0
   }
 ]

@@ -54,7 +54,7 @@ app.whenReady().then(() => {
 
     ipcMain.on("accept-order", async (_, order, printer) => {
         console.log("Main Process: Received print order", order);
-
+        const printOptions = order.items[0].printOptions || {};
         if (!order.items || order.items.length === 0) {
             console.error("No items found in order");
             return;
@@ -74,7 +74,9 @@ app.whenReady().then(() => {
             console.log("Main process: File downloaded to", localFilePath);
 
             // Print the downloaded file with the provided printer and order options
-            printOrder(localFilePath, printer, order);
+
+
+            printOrder(localFilePath, printer, printOptions);
 
             // Cleanup: delete the temporary file after a delay (adjust delay as needed)
             setTimeout(() => {

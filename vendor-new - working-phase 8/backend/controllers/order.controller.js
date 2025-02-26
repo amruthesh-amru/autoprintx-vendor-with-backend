@@ -2,6 +2,7 @@
 import dotenv from "dotenv";
 import Order from "../models/order.model.js";
 import orderModel from "../models/order.model.js";
+import userModel from "../models/user.model.js";
 
 
 dotenv.config();
@@ -29,20 +30,25 @@ export const getOrders = async (req, res) => {
 };
 export async function processOrder(req, res) {
     try {
-        // Parse the orderData JSON (it should include S3 URLs in each item)
         const orderData = JSON.parse(req.body.orderData);
+        console.log("❤️❤️", orderData);
+
         const { customer, vendor, costEstimate, items } = orderData;
 
-        // Process each order item
+        // Fetch the customer's name using the ID
+        const customerData = await userModel.findById(customer);
+        if (!customerData) {
+            return res.status(404).json({ message: "Customer not found" });
+        }
+
         const processedItems = items.map((item) => {
-            // Here, item should include a field like s3Url (or fileUrl) from the pre-upload
             const document = item.s3Url
                 ? {
-                    fileName: item.fileName, // You can store the file name
-                    filePath: item.s3Url,      // S3 URL returned from pre-upload
+                    fileName: item.fileName,
+                    filePath: item.s3Url,
                     pages: item.pages || 1,
                 }
-                : {}; // If no file URL, leave empty
+                : {};
 
             return {
                 document,
@@ -51,7 +57,7 @@ export async function processOrder(req, res) {
         });
 
         const newOrder = new Order({
-            customer,
+            customer: customerData.name, // Send customer name instead of ID
             vendor,
             items: processedItems,
             costEstimate,
