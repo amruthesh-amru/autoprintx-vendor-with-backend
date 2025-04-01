@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login - Autoprint X</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+      }
+      input,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login to Autoprint X</h2>
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="login-btn">Login</button>
+      <p>Don't have an account? <a id="go-to-signup" href="#">Sign up</a></p>
+
+      <p id="error-message" style="color: red"></p>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

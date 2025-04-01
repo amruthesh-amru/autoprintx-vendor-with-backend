@@ -3,6 +3,47 @@ const orderList = document.getElementById("order-list");
 
 // Load available printers when DOM is ready
 document.addEventListener("DOMContentLoaded", async () => {
+    const token = localStorage.getItem("vendorToken");
+
+    if (!token) {
+        console.log("No token found! Redirecting to login...");
+        window.location.href = "login.html"; // Redirect to login page
+    } else {
+        console.log("User authenticated!");
+        // You can also make an API request here to validate the token if needed
+    }
+    console.log("User authenticated! Connecting to Socket.IO from renderer...");
+
+    // Connect to the backend socket without any extra options (since token is not needed)
+    const socket = io("http://localhost:3000");
+
+    socket.on("connect", () => {
+        console.log("Renderer: Connected to WebSocket, id:", socket.id);
+    });
+
+    socket.on("connect_error", (err) => {
+        console.error("Renderer: Socket connection error:", err);
+    });
+
+    // Listen for new orders and update the UI accordingly
+    socket.on("new-order", (order) => {
+        console.log("Renderer: New order received via Socket:", order);
+        // For example, call your function to create order card:
+        createOrderCard(order);
+        sendOrderNotification(order);
+    });
+
+    // Optionally, you can expose the socket object to your window if needed:
+    window.socket = socket;
+    const logoutButton = document.getElementById("logout-btn");
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", () => {
+            localStorage.removeItem("vendorToken");
+            alert("Logged out!");
+            window.location.href = "login.html"; // Redirect to login page
+        });
+    }
     try {
         const printers = await window.electron.getPrinters();
         console.log("Renderer: Printers received:", printers);
@@ -69,11 +110,6 @@ async function loadPastOrders() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const showPastOrdersBtn = document.getElementById("show-past-orders");
-    showPastOrdersBtn.addEventListener("click", loadPastOrders);
-});
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const showPastOrdersBtn = document.getElementById("show-past-orders");
@@ -96,7 +132,7 @@ window.electron.onNewOrder((order) => {
         console.warn(`Order ${orderId} already exists in UI, skipping duplicate.`);
         return;
     }
-
+    console.log("Triggering Notification for Order:", order)
     // Show a notification using details from the first order item
     sendOrderNotification(order);
     createOrderCard(order);
@@ -104,8 +140,8 @@ window.electron.onNewOrder((order) => {
 
 // Updated notification function to use the first item details
 function sendOrderNotification(order) {
-    let fileName = "N/A";
-    let pages = "N/A";
+    let fileName = order.items[0].document.fileName;
+    let pages = order.items[0].document.pages;
     if (order.items && order.items.length > 0) {
         const firstItem = order.items[0];
         fileName = firstItem.document && firstItem.document.fileName ? firstItem.document.fileName : "N/A";
@@ -255,6 +291,7 @@ async function selectPrinter(printers) {
         });
     });
 }
+
 
 
 // Listen for order processing updates

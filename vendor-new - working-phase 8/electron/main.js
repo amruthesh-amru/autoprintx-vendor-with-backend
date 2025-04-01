@@ -9,6 +9,8 @@ import { getOrders } from "./orderStore.js";
 import { removeOrder } from "./orderStore.js";
 let win;
 const socket = io("http://localhost:3000");
+// const socket = io("https://autoprint-x-backend-deploy.onrender.com");
+
 
 app.whenReady().then(() => {
     win = new BrowserWindow({
@@ -54,7 +56,9 @@ app.whenReady().then(() => {
 
     ipcMain.on("accept-order", async (_, order, printer) => {
         console.log("Main Process: Received print order", order);
+
         const printOptions = order.items[0].printOptions || {};
+
         if (!order.items || order.items.length === 0) {
             console.error("No items found in order");
             return;

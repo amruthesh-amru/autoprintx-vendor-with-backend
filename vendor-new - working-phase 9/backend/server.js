@@ -11,7 +11,7 @@ import Stripe from "stripe";
 import paymentRouter from './routes/payment.route.js';
 import uploadRouter from "./routes/upload.route.js";
 import cookieParser from "cookie-parser";
-
+import vendorRouter from "./routes/vendor.route.js";
 
 dotenv.config();
 connectDB()
@@ -37,7 +37,7 @@ app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/payment/", paymentRouter);
 app.use("/api/upload", uploadRouter);
-
+app.use("/api/vendor", vendorRouter);
 // Route for Stripe webhook
 // (Optional) Default route
 app.get("/", (req, res) => {
