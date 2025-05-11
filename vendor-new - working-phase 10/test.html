@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js"></script>
+    <script>
+      let socket;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        socket = io("http://localhost:3000");
+
+        socket.on("connect", () => {
+          console.log("Connected! Socket ID:", socket.id);
+        });
+
+        socket.on("connect_error", (err) => {
+          console.error("Connection error:", err);
+        });
+
+        // ✅ Ensure button exists before adding event listener
+        document
+          .getElementById("disconnect-btn")
+          .addEventListener("click", () => {
+            console.log("Disconnecting...");
+            if (socket && socket.connected) {
+              socket.disconnect();
+              console.log("Socket disconnected.");
+            } else {
+              console.log("Socket is already disconnected.");
+            }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Socket.IO Test</h1>
+    <button id="disconnect-btn">Disconnect</button>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "customer": "Amruthesh Gowda",
+    "items": [
+      {
+        "document": {
+          "fileName": "sports report.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/2f58b532-6c1b-4757-bfa1-d6b07e4047dd.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "staple",
+          "color": "color",
+          "copies": 1,
+          "duplex": false,
+          "estimatedCost": 75,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "6820688b761cd38efeec6d91"
+      }
+    ],
+    "costEstimate": 75,
+    "status": "pending",
+    "_id": "6820688b761cd38efeec6d90",
+    "createdAt": "2025-05-11T09:06:20.003Z",
+    "updatedAt": "2025-05-11T09:06:20.003Z",
+    "__v": 0
+  }
+]

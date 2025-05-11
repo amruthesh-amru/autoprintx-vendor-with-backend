@@ -28,5 +28,65 @@
     "createdAt": "2025-02-26T09:49:40.695Z",
     "updatedAt": "2025-02-26T09:49:40.695Z",
     "__v": 0
+  },
+  {
+    "customer": "67bff77318eb55f8a6435747",
+    "items": [
+      {
+        "document": {
+          "fileName": "COMPUTER-SCIENCE-PROJECT-TITLES-2024-25-TAKEOFF-EDU-GROUP-jan-2025.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/f77cb409-6dfe-4c10-bb89-d8af87ffebce.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 4,
+          "duplex": false,
+          "estimatedCost": 300,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "6819e9242da1ec92bbac153a"
+      }
+    ],
+    "costEstimate": 300,
+    "status": "pending",
+    "_id": "6819e9242da1ec92bbac1539",
+    "createdAt": "2025-05-06T10:49:08.360Z",
+    "updatedAt": "2025-05-06T10:49:08.360Z",
+    "__v": 0
+  },
+  {
+    "customer": "67bff77318eb55f8a6435747",
+    "items": [
+      {
+        "document": {
+          "fileName": "5th sem result.pdf",
+          "filePath": "https://autoprintx-pdf-storage.s3.eu-north-1.amazonaws.com/f7aeddc6-1f67-4fa0-952a-af369667d5ce.pdf",
+          "pages": 1
+        },
+        "printOptions": {
+          "binding": "none",
+          "color": "color",
+          "copies": 12,
+          "duplex": false,
+          "estimatedCost": 120,
+          "orientation": "portrait",
+          "pageRange": "",
+          "paperSize": "A4",
+          "selectAll": true
+        },
+        "_id": "6819ea562da1ec92bbac153f"
+      }
+    ],
+    "costEstimate": 120,
+    "status": "pending",
+    "_id": "6819ea562da1ec92bbac153e",
+    "createdAt": "2025-05-06T10:54:14.523Z",
+    "updatedAt": "2025-05-06T10:54:14.523Z",
+    "__v": 0
   }
 ]
